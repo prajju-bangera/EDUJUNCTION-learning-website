@@ -1,0 +1,122 @@
+.header {
+  background-color: #1e2a38;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.header-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  color: greenyellow;
+  margin-left: -150px;
+}
+
+.logo-img{
+  height: 50px;
+  width: 50px;
+  margin-top: -10px;
+  
+
+}
+nav.nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+nav.nav a:hover {
+ 
+  color: greenyellow;
+}
+
+/* Hamburger menu button */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle:focus {
+  outline: 2px solid #3498db;
+  outline-offset: 2px;
+}
+
+.hamburger {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 2px;
+}
+
+/* Responsive: small screens */
+@media (max-width: 768px) {
+  nav.nav {
+    position: fixed;       /* fixed sidebar */
+    top: 0;
+    left: -290px;        
+    height: 100vh;
+    width: 250px;
+    background-color: #1e2a38;
+    flex-direction: column;
+    padding: 70px 20px 20px 20px;
+    border-radius: 0;      /* no border radius */
+    box-shadow: 3px 0 8px rgba(0,0,0,0.3);
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    z-index: 1100;
+  }
+.logo{
+  margin-left: 50px;
+}
+  nav.nav.nav-open {
+    left: 0;  /* slide in sidebar */
+  }
+
+  nav.nav a {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-weight: 600;
+    color: white;
+  }
+
+  nav.nav a:last-child {
+    border-bottom: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+@media (max-width: 1024px) {
+  .logo{
+  margin-left: 50px;
+}
+}

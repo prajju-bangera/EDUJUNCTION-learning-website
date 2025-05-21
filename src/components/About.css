@@ -1,0 +1,161 @@
+.about-section {
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, #e8f0ff, #f9fbff);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+  gap: 50px;
+  animation: fadeIn 1s ease-in;
+}
+
+.about-image img {
+  width: 320px;
+  max-width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.03);
+}
+
+.about-content {
+  flex: 1;
+  min-width: 320px;
+}
+
+.about-content h2 {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  color: #1a2b50;
+}
+
+.about-content h2::after{
+   content: '';
+  width: 60px;
+  height: 4px;
+  background-color: #c82333;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.dropdown {
+  margin-top: 20px;
+}
+
+.dropdown-btn {
+  background-color: #1e2a38;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  position: relative;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.dropdown-row {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.dropdown-btn:hover {
+  background-color: #005ecb;
+  transform: translateY(-2px);
+}
+
+.dropdown-content {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.5s ease forwards;
+  margin-top: 10px;
+}
+
+/* Animations */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Responsive for Tablets (max-width: 1024px) */
+
+
+/* Responsive for Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 60px 15px;
+  }
+
+  .about-container {
+    gap: 30px;
+  }
+
+  .about-image img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .about-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .dropdown-btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .dropdown-content {
+    padding: 15px;
+    font-size: 0.95rem;
+  }
+
+  .dropdown-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
