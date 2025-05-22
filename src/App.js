@@ -9,6 +9,7 @@ import About from './components/About';
 import Services from './components/Services';
 import Platform from './components/Platform';
 import Footer from './components/Footer';
+import CustomCursor from './components/CustomCursor';
 
 // Pages
 import Courses from './pages/Courses';
@@ -17,6 +18,7 @@ import PlatformList from './pages/PlatformList';
 function App() {
   return (
     <Router>
+            <CustomCursor />
       <Header />
 
       <Routes>

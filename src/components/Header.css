@@ -4,6 +4,10 @@
   transition: background 0.3s, color 0.3s;
 }
 
+a{
+  text-decoration: none;
+}
+
 body.dark-mode {
    background: linear-gradient(to bottom, #000000, #000000);
 

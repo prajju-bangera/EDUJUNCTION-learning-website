@@ -57,14 +57,14 @@ function Header() {
 
       <header className="header">
         <div className="container header-container">
-          <div className="logo">
+         <a href="/"> <div className="logo">
             <img
               src="https://cdn-icons-png.flaticon.com/256/6347/6347595.png"
               alt="EduJunction Logo"
               className="logo-img"
             />
             EDUJUNCTION
-          </div>
+          </div></a>
 
           <nav className={`nav ${menuOpen ? "nav-open" : ""}`}>
             <a className="nav-link" onClick={() => handleScroll("home")}>
