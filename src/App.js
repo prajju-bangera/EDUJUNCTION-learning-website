@@ -7,7 +7,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
-import Platform from './components/Platform';
+// import Platform from './components/Platform';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
 

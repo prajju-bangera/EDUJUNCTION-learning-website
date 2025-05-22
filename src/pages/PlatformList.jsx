@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./PlatformList.css";
-import { SiKaggle } from "react-icons/si";
-import { FaAws } from "react-icons/fa";
-import Header from '../components/Header';
+// import { SiKaggle } from "react-icons/si";
+// import { FaAws } from "react-icons/fa";
+// import Header from '../components/Header';
 import ReactGA from "react-ga4";
 
 // Initialize GA with your tracking ID

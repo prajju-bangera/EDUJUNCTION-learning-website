@@ -67,15 +67,15 @@ function Header() {
           </div></a>
 
           <nav className={`nav ${menuOpen ? "nav-open" : ""}`}>
-            <a className="nav-link" onClick={() => handleScroll("home")}>
+            <button className="nav-link" onClick={() => handleScroll("home")}>
               HOME
-            </a>
-            <a className="nav-link" onClick={() => handleScroll("about")}>
+            </button>
+            <button className="nav-link" onClick={() => handleScroll("about")}>
               ABOUT
-            </a>
-            <a className="nav-link" onClick={() => handleScroll("services")}>
+            </button>
+            <button className="nav-link" onClick={() => handleScroll("services")}>
               SERVICES
-            </a>
+            </button>
 
             <NavLink
               to="/courses"
