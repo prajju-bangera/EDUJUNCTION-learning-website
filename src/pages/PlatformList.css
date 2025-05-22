@@ -5,11 +5,10 @@
 }
 
 .section-title {
-  font-size: 2.2rem;
+ /* font-size: 22px; */
   margin-bottom: 40px;
   color: #1e293b;
 }
-
 
 
 .platforms-slide {
@@ -105,7 +104,7 @@
   padding: 10px 24px;
   background-color: #1e2a38;
   color: white;
-  border-radius: 25px;
+  border-radius: 10px;
   text-decoration: none;
   transition: all 0.3s;
   font-weight: 500;
@@ -185,12 +184,129 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
-  .platforms-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+@media (max-width: 1024px) {
+  .platforms-slide {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for tablets */
   }
-  
-atform-card {
+
+  .platform-card {
+    height: 300px; /* Slightly taller for spacing */
+  }
+}
+
+/* Small screens - large phones */
+@media (max-width: 768px) {
+  .platforms-slide {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for small devices */
+  }
+
+  .platform-card {
     height: 320px;
   }
+}
+
+/* Extra small screens - mobile */
+@media (max-width: 480px) {
+  .platforms-slide {
+    grid-template-columns: 1fr; /* 1 column for very small screens */
+  }
+
+  .search-bar{
+    width: 70%;
+  }
+  .platform-card {
+    height: auto;
+    padding: 20px;
+  }
+
+  .platform-logo {
+    width: 80px;
+    height: 80px;
+    margin-left: 140px;
+  }
+
+  .visit-btn{
+    margin-left: 58px;
+    width: 50%;
+  }
+}
+
+
+
+/* Dark mode styles */
+body.dark-mode .platforms-section {
+  background-color: #121212;
+  color: #ddd;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .section-title {
+  color: #eee;
+}
+
+body.dark-mode .platform-card {
+  background-color: #1e1e1e;
+  box-shadow: 0 6px 14px rgba(255, 255, 255, 0.05);
+  color: #ccc;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .platform-card:hover {
+  box-shadow: 0 12px 25px rgba(255, 255, 255, 0.1);
+  transform: translateY(-6px);
+}
+
+body.dark-mode .platform-card h3 {
+  color: #ddd;
+}
+
+body.dark-mode .platform-card p {
+  color: #aaa;
+}
+
+body.dark-mode .visit-btn {
+  background-color: #444;
+  color: #eee;
+  border: 1px solid #666;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .visit-btn:hover {
+  background-color: #0f6fc3;
+  color: white;
+}
+
+body.dark-mode .search-bar {
+  background-color: #222;
+  border: 1px solid #555;
+  color: #ddd;
+}
+
+body.dark-mode .search-bar:focus {
+  border-color: #0f6fc3;
+  box-shadow: 0 0 5px rgba(15, 111, 195, 0.8);
+}
+
+body.dark-mode .search-icon {
+  color: #bbb;
+}
+
+body.dark-mode .pagination {
+  color: #ccc;
+}
+
+body.dark-mode .page-btn {
+  background-color: #333;
+  border: 1px solid #555;
+  color: #ccc;
+}
+
+body.dark-mode .page-btn:hover {
+  background-color: #444;
+}
+
+body.dark-mode .page-btn.active {
+  background-color: #0f6fc3;
+  color: white;
+  border-color: #0f6fc3;
 }

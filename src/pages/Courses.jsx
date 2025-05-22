@@ -220,7 +220,7 @@ const Courses = () => {
       {/* Right Section */}
       <div style={{ flex: 1 }}>
         {/* Heading */}
-        <h2 style={{ fontSize: "28px", fontWeight: "700", marginBottom: "20px" }}>
+        <h2 style={{ fontSize: "2.2rem", fontWeight: "700", marginBottom: "20px" }}>
           Top YouTube Courses
         </h2>
 
@@ -232,6 +232,7 @@ const Courses = () => {
             gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
             gap: "20px",
             marginLeft: "100px",
+           
           }}
         >
           {currentCourses.map(({ id, title, platform }) => (
@@ -317,7 +318,7 @@ const Courses = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ 
-                    color: "#1e2a38;",
+                    color:"red",
                     textDecoration: "none",
                     fontWeight: "bold",
                     display: "inline-block",

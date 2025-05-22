@@ -1,27 +1,59 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";  
-import { HashLink } from "react-router-hash-link";
+import React, { useState, useEffect } from "react";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
+import { scroller } from "react-scroll";
 import "./Header.css";
+import { FiMenu, FiX } from "react-icons/fi"; // Fi = Feather Icons
+
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Load dark mode preference from localStorage
+  useEffect(() => {
+    const darkPref = localStorage.getItem("darkMode") === "true";
+    setIsDarkMode(darkPref);
+    document.body.classList.toggle("dark-mode", darkPref);
+  }, []);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const closeMenu = () => setMenuOpen(false);
+
+  const handleScroll = (target) => {
+    if (location.pathname !== "/") {
+      navigate("/", { replace: false });
+      setTimeout(() => {
+        scroller.scrollTo(target, {
+          duration: 500,
+          delay: 0,
+          smooth: "easeInOutQuart",
+          offset: -60,
+        });
+      }, 100);
+    } else {
+      scroller.scrollTo(target, {
+        duration: 500,
+        delay: 0,
+        smooth: "easeInOutQuart",
+        offset: -60,
+      });
+    }
+    closeMenu();
   };
 
-  const closeMenu = () => {
-    setMenuOpen(false);
+  const toggleDarkMode = () => {
+    const newMode = !isDarkMode;
+    setIsDarkMode(newMode);
+    localStorage.setItem("darkMode", newMode);
+    document.body.classList.toggle("dark-mode", newMode);
   };
 
   return (
     <>
-      {/* Overlay for sidebar */}
-      <div 
-        className={`overlay ${menuOpen ? "show" : ""}`} 
-        onClick={closeMenu} 
-        aria-hidden={!menuOpen}
-      ></div>
+      <div className={`overlay ${menuOpen ? "show" : ""}`} onClick={closeMenu} />
 
       <header className="header">
         <div className="container header-container">
@@ -34,35 +66,51 @@ function Header() {
             EDUJUNCTION
           </div>
 
-          {/* Sidebar nav */}
           <nav className={`nav ${menuOpen ? "nav-open" : ""}`}>
-            <HashLink smooth to="/#home" className="nav-link" onClick={closeMenu}>
+            <a className="nav-link" onClick={() => handleScroll("home")}>
               HOME
-            </HashLink>
-            <HashLink smooth to="/#about" className="nav-link" onClick={closeMenu}>
+            </a>
+            <a className="nav-link" onClick={() => handleScroll("about")}>
               ABOUT
-            </HashLink>
-            <HashLink smooth to="/#services" className="nav-link" onClick={closeMenu}>
+            </a>
+            <a className="nav-link" onClick={() => handleScroll("services")}>
               SERVICES
-            </HashLink>
-            <NavLink to="/courses" className={({ isActive }) => (isActive ? "active" : "")} onClick={closeMenu}>
+            </a>
+
+            <NavLink
+              to="/courses"
+              className={({ isActive }) => (isActive ? "active nav-link" : "nav-link")}
+              onClick={closeMenu}
+            >
               YOUTUBE COURSES
             </NavLink>
-            <NavLink to="/platform" className={({ isActive }) => (isActive ? "active" : "")} onClick={closeMenu}>
+            <NavLink
+              to="/platform"
+              className={({ isActive }) => (isActive ? "active nav-link" : "nav-link")}
+              onClick={closeMenu}
+            >
               PLATFORMS
             </NavLink>
           </nav>
 
-          {/* Hamburger button */}
           <button
-            className="menu-toggle"
-            onClick={toggleMenu}
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={menuOpen}
+            className="dark-mode-toggle"
+            onClick={toggleDarkMode}
+            aria-label="Toggle Dark Mode"
           >
+            {isDarkMode ? "Light Mode ☀️" : "Dark Mode 🌙"}
+          </button>
+
+     <button
+  className="menu-toggle"
+  onClick={toggleMenu}
+  aria-label={menuOpen ? "Close menu" : "Open menu"}
+  aria-expanded={menuOpen}
+>
+  {menuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
+            {/* <span className="hamburger"></span>
             <span className="hamburger"></span>
-            <span className="hamburger"></span>
-            <span className="hamburger"></span>
+            <span className="hamburger"></span> */}
           </button>
         </div>
       </header>

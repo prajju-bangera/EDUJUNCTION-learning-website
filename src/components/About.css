@@ -159,3 +159,55 @@
     gap: 10px;
   }
 }
+
+
+
+
+/* Dark Mode styles for About Section */
+body.dark-mode .about-section {
+ background: linear-gradient(to bottom, #000000, #000000);
+  color: #ddd;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body.dark-mode .about-container {
+  /* You can keep flex styling, no color changes needed here */
+}
+
+body.dark-mode .about-image img {
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+  filter: brightness(0.85);
+}
+
+body.dark-mode .about-content h2 {
+  color: #f9a825;  /* A warm yellow for contrast */
+}
+
+body.dark-mode .about-content h2::after {
+  background-color: #f9a825;
+}
+
+body.dark-mode .about-content p {
+  color: #ccc;
+}
+
+body.dark-mode .dropdown-btn {
+  background-color: #333;
+  color: #eee;
+  border: 1px solid #555;
+}
+
+body.dark-mode .dropdown-btn:hover {
+  background-color: #555;
+  transform: translateY(-2px);
+}
+
+body.dark-mode .dropdown-content {
+  background: #222;
+  color: #ddd;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .dropdown-row {
+  /* No color changes needed here */
+}

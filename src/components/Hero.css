@@ -180,6 +180,7 @@
     max-width: 90%;
     margin: 0 auto;
   }
+  
 
   .hero-section h1 {
     font-size: 3rem;
@@ -235,10 +236,9 @@
     max-width: 350px;
     border-radius: 15px;
   }
-}
-
-@media (max-width: 400px) {
-    .jump-text .brand{
-      font-size: 25px;
+     .jump-text .brand{
+      font-size: 46px;
     }
 }
+
+

@@ -115,3 +115,50 @@
   cursor: pointer;
   z-index: 4;
 }
+
+
+
+
+
+/* Dark Mode styles for Carousel */
+body.dark-mode .carousel-wrapper {
+  background: linear-gradient(to bottom, #000000, #000000);
+
+  color: #ddd;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body.dark-mode .carousel-wrapper h2 {
+  color: #f9a825;  /* soft green for heading */
+}
+
+body.dark-mode .carousel-wrapper h2 span {
+color: #f9a825; }
+
+body.dark-mode .carousel-wrapper h2::after {
+  background-color: #c82333; /* keep the red accent */
+}
+
+body.dark-mode .carousel {
+  /* background transparent for carousel container */
+  background: transparent;
+}
+
+body.dark-mode .card {
+  background: linear-gradient(135deg, rgba(60, 90, 120, 0.85), #1e2a38);
+  box-shadow: 0 15px 30px rgba(255, 255, 255, 0.1);
+  color: #eee;
+  filter: none; /* remove blur for dark mode */
+}
+
+body.dark-mode .card h3,
+body.dark-mode .card p {
+  color: #eee;
+}
+
+body.dark-mode .nav.left,
+body.dark-mode .nav.right {
+  background: #4a90e2; /* lighter blue for buttons */
+  color: #fff;
+  box-shadow: 0 0 8px #4a90e2;
+}
